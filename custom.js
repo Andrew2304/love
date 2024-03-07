@@ -218,6 +218,11 @@ var ParticlePool = (function () {
   }
   window.onresize = onResize;
 
+  // setTimeout(function () {
+  //         onResize();
+  //         render();
+  //     }, 1000);
+
   // custom
   // show text
   const text = "Chúc em iu, ngày 8/3 thật nhiều niềm vui và hạnh phúc";
@@ -238,10 +243,6 @@ var ParticlePool = (function () {
     // const pathServer = "";
     let indexImage = 0;
 
-      setTimeout(function () {
-          onResize();
-          render();
-      }, 23000);
       // show images
       setInterval(() => {
           const element = document.getElementById("image");
@@ -268,7 +269,12 @@ var ParticlePool = (function () {
       button.style.display = "none";
       audio.play();
       renderText();
-      renderImages()
+      renderImages();
+
+      setTimeout(() => {
+          onResize();
+          render();
+      }, 23000);
     }
   });
 })(document.getElementById('pinkboard'));
