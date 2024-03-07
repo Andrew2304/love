@@ -226,7 +226,7 @@ var ParticlePool = (function () {
   // custom
   // show text
   const text = "Chúc em iu, 8/3 thật nhiều niềm vui và hạnh phúc";
-  const speed = 140; // Speed in milliseconds (lower value = faster typing)
+  const speed = 160; // Speed in milliseconds (lower value = faster typing)
 
   let indexText = 0;
 
@@ -258,7 +258,7 @@ var ParticlePool = (function () {
               indexImage = 6;
               context.clearRect(0, 0, canvas.width, canvas.height);
           }
-      }, 5000);
+      }, 6000);
   }
 
   const button = document.querySelector("#button");
@@ -274,7 +274,7 @@ var ParticlePool = (function () {
       setTimeout(() => {
           onResize();
           render();
-      }, 23000);
+      }, 28000);
     }
   });
 })(document.getElementById('pinkboard'));
