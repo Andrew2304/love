@@ -225,11 +225,15 @@ var ParticlePool = (function () {
   }, 18000);
 
 
+  // custom
+  const pathServer = "/love";
+  // const pathServer = "";
+
   let index = 1;
 
   setInterval(() => {
     let element = document.getElementById("image");
-    element.style.backgroundImage = `url("/images/hinh${index}.jpg")`;
+    element.style.backgroundImage = `url("${pathServer}/images/hinh${index}.jpg")`;
     index++;
 
     if (index === 10) {
@@ -238,7 +242,7 @@ var ParticlePool = (function () {
   }, 4000)
 
   const text = "Chúc e iu, ngày 8/3 thật nhiều niềm vui và hạnh phúc";
-  const speed = 60; // Speed in milliseconds (lower value = faster typing)
+  const speed = 50; // Speed in milliseconds (lower value = faster typing)
 
   let index1 = 0;
 
