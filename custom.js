@@ -218,57 +218,57 @@ var ParticlePool = (function () {
   }
   window.onresize = onResize;
 
-  // delay rendering bootstrap
-  setTimeout(function () {
-    onResize();
-    render();
-  }, 23000);
-  
-
-
   // custom
-  const pathServer = "/love";
-  // const pathServer = "";
-
-  let index = 0;
-
-  // show images
-
-  setInterval(() => {
-    const element = document.getElementById("image");
-    if (index > 3) {
-      element.style.backgroundImage = null;
-    }
-    const timeout = setTimeout(function () {
-      element.style.backgroundImage = `url("${pathServer}/images/hinh${index}.jpg")`;
-      clearTimeout(timeout);
-    }, 2000);
-
-
-    index++;
-
-    if (index === 11) {
-      index = 6;
-      context.clearRect(0, 0, canvas.width, canvas.height);
-    }
-  }, 5000)
-
-
   // show text
   const text = "Chúc e iu, ngày 8/3 thật nhiều niềm vui và hạnh phúc";
   const speed = 100; // Speed in milliseconds (lower value = faster typing)
 
-  let index1 = 0;
+  let indexText = 0;
 
-  function typeWriter() {
-    if (index1 < text.length) {
-      document.getElementById("typewriter-text").innerHTML += text.charAt(index1);
-      index1++;
-      setTimeout(typeWriter, speed);
+  const renderText = () => {
+    if (indexText < text.length) {
+      document.getElementById("typewriter-text").innerHTML += text.charAt(indexText);
+      indexText++;
+      setTimeout(renderText, speed);
     }
   }
 
-  window.onload = function () {
-    typeWriter();
-  };
+  const renderImages = () => {
+    const pathServer = "/love";
+    // const pathServer = "";
+    let indexImage = 0;
+
+      setTimeout(function () {
+          onResize();
+          render();
+      }, 23000);
+      // show images
+      setInterval(() => {
+          const element = document.getElementById("image");
+          if (indexImage > 3) {
+              element.style.backgroundImage = null;
+          }
+          const timeout = setTimeout(function () {
+              element.style.backgroundImage = `url("${pathServer}/images/hinh${indexImage}.jpg")`;
+              clearTimeout(timeout);
+          }, 2000);
+          indexImage++;
+          if (indexImage === 11) {
+              indexImage = 6;
+              context.clearRect(0, 0, canvas.width, canvas.height);
+          }
+      }, 5000);
+  }
+
+  const button = document.querySelector("#button");
+  const audio = document.querySelector("audio");
+
+  button.addEventListener("click", () => {
+    if (audio.paused) {
+      button.style.display = "none";
+      audio.play();
+      renderText();
+      renderImages()
+    }
+  });
 })(document.getElementById('pinkboard'));

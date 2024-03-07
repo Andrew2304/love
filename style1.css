@@ -185,3 +185,26 @@ body {
   white-space: nowrap;
   overflow: hidden;
 }
+
+.hinh_trai_tim {
+  position: relative;
+  margin-left: -138px;
+}
+.hinh_trai_tim:before,.hinh_trai_tim:after {
+  cursor: pointer;
+  content: "";
+  width: 70px;
+  height: 115px;
+  position: absolute;
+  background: rgb(225, 12, 168);
+  left: 70px;
+  top: 0;
+  border-radius: 50px 50px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+.hinh_trai_tim:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
