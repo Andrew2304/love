@@ -141,13 +141,12 @@ body {
   text-align: center;
   width: 800px;
   height: 800px;
-  background-image: url("/images/hinh2.jpg");
   background-size: cover;
 }
 .text-box {
   margin-top: 150px;
 }
-.text-love {
+.box-love {
   background-color: #cbd5e1;
   width: 100%;
   color: rgb(225, 12, 168);
@@ -169,4 +168,19 @@ body {
   margin-top: -100px;
   margin-left: 50px;
   color: rgb(12, 225, 126);
+}
+
+
+#typewriter-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#typewriter-text {
+  display: inline-block;
+  font-size: 24px;
+  font-family: 'Courier New', Courier, monospace;
+  border-right: 2px solid;
+  white-space: nowrap;
+  overflow: hidden;
 }
