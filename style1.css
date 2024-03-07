@@ -179,11 +179,13 @@ body {
 
 #typewriter-text {
   display: inline-block;
-  font-size: 24px;
+  font-size: 26px;
+  font-weight: 500;
   font-family: 'Courier New', Courier, monospace;
   border-right: 2px solid;
   white-space: nowrap;
   overflow: hidden;
+  text-shadow: 0px 11px 10px rgb(225, 12, 168);
 }
 
 .hinh_trai_tim {

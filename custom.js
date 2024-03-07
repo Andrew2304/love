@@ -225,8 +225,8 @@ var ParticlePool = (function () {
 
   // custom
   // show text
-  const text = "Chúc em iu, ngày 8/3 thật nhiều niềm vui và hạnh phúc";
-  const speed = 100; // Speed in milliseconds (lower value = faster typing)
+  const text = "Chúc em iu, 8/3 thật nhiều niềm vui và hạnh phúc";
+  const speed = 140; // Speed in milliseconds (lower value = faster typing)
 
   let indexText = 0;
 
