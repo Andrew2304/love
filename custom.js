@@ -223,6 +223,7 @@ var ParticlePool = (function () {
     onResize();
     render();
   }, 18000);
+  
 
 
   // custom
@@ -231,6 +232,7 @@ var ParticlePool = (function () {
 
   let index = 1;
 
+  // show images
   setInterval(() => {
     let element = document.getElementById("image");
     element.style.backgroundImage = `url("${pathServer}/images/hinh${index}.jpg")`;
@@ -241,6 +243,8 @@ var ParticlePool = (function () {
     }
   }, 4000)
 
+
+  // show text
   const text = "Chúc e iu, ngày 8/3 thật nhiều niềm vui và hạnh phúc";
   const speed = 50; // Speed in milliseconds (lower value = faster typing)
 
