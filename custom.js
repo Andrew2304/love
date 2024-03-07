@@ -222,7 +222,7 @@ var ParticlePool = (function () {
   setTimeout(function () {
     onResize();
     render();
-  }, 18000);
+  }, 23000);
   
 
 
@@ -230,23 +230,33 @@ var ParticlePool = (function () {
   const pathServer = "/love";
   // const pathServer = "";
 
-  let index = 1;
+  let index = 0;
 
   // show images
+
   setInterval(() => {
-    let element = document.getElementById("image");
-    element.style.backgroundImage = `url("${pathServer}/images/hinh${index}.jpg")`;
+    const element = document.getElementById("image");
+    if (index > 3) {
+      element.style.backgroundImage = null;
+    }
+    const timeout = setTimeout(function () {
+      element.style.backgroundImage = `url("${pathServer}/images/hinh${index}.jpg")`;
+      clearTimeout(timeout);
+    }, 2000);
+
+
     index++;
 
-    if (index === 10) {
+    if (index === 11) {
       index = 6;
+      context.clearRect(0, 0, canvas.width, canvas.height);
     }
-  }, 4000)
+  }, 5000)
 
 
   // show text
   const text = "Chúc e iu, ngày 8/3 thật nhiều niềm vui và hạnh phúc";
-  const speed = 50; // Speed in milliseconds (lower value = faster typing)
+  const speed = 100; // Speed in milliseconds (lower value = faster typing)
 
   let index1 = 0;
 
